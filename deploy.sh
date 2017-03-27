@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 if [ "$CI" = "true" ]; then
     git config --global user.email "deploy@circleci"

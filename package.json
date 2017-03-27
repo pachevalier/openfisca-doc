@@ -10,16 +10,18 @@
     "prebuild": "npm run clean",
     "build": "gitbook build",
     "clean": "del _book",
-    "deploy": "sh deploy.sh",
+    "deploy": "npm run build && sh deploy.sh",
+    "deploy:ci": "sh deploy.sh",
     "postinstall": "gitbook install",
-    "start": "gitbook serve --port 2050 --open",
+    "start": "gitbook serve --port 2050",
     "test": "sh run-tests.sh"
   },
   "author": "Christophe Benz <christophe.benz@data.gouv.fr>",
   "license": "AGPL-3.0",
   "private": true,
   "devDependencies": {
-    "gitbook-cli": "^2.3.0",
-    "del-cli": "^0.2.1"
+    "del-cli": "^0.2.1",
+    "gh-pages": "^0.12.0",
+    "gitbook-cli": "^2.3.0"
   }
 }
