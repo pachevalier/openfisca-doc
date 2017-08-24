@@ -1,0 +1,961 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Input and output data | OpenFisca</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../openfisca-web-api/reforms.html" />
+    
+    
+    <link rel="prev" href="../openfisca-web-api/endpoints.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.3"
+        data-chapter-title="Input and output data"
+        data-filepath="openfisca-web-api/input-output-data.md"
+        data-basepath=".."
+        data-revision="Thu Aug 24 2017 15:46:33 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+                
+                <li>
+                    <a href="https://www.openfisca.org/" target="blank" class="custom-link">OpenFisca website</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="key-concepts.html">
+            
+                
+                    <a href="../key-concepts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Key concepts
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="tax_and_benefit_system.html">
+            
+                
+                    <a href="../tax_and_benefit_system.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Tax and Benefit System
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="variables.html">
+            
+                
+                    <a href="../variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="parameters.html">
+            
+                
+                    <a href="../parameters.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Parameters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="person,_entities,_role.html">
+            
+                
+                    <a href="../person,_entities,_role.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Person, entities, role
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="periodsinstants.html">
+            
+                
+                    <a href="../periodsinstants.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Periods, Instants
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="input_data.html">
+            
+                
+                    <a href="../input_data.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Input Data
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="simulation.html">
+            
+                
+                    <a href="../simulation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Simulation, Computation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="reforms.html">
+            
+                
+                    <a href="../reforms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Reforms
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="coding-the-legislation/index.html">
+            
+                
+                    <a href="../coding-the-legislation/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        From law to code
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="coding-the-legislation/10_basic_example.html">
+            
+                
+                    <a href="../coding-the-legislation/10_basic_example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Coding a formula: basic example
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="coding-the-legislation/20_input_variables.html">
+            
+                
+                    <a href="../coding-the-legislation/20_input_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Introducing an input variable
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="coding-the-legislation/25_vectorial_computing.html">
+            
+                
+                    <a href="../coding-the-legislation/25_vectorial_computing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Vector calculus limitations
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="coding-the-legislation/30_case_disjunction.html">
+            
+                
+                    <a href="../coding-the-legislation/30_case_disjunction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Case disjunction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="coding-the-legislation/35_periods.html">
+            
+                
+                    <a href="../coding-the-legislation/35_periods.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Periods
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="coding-the-legislation/40_legislation_evolutions.html">
+            
+                
+                    <a href="../coding-the-legislation/40_legislation_evolutions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        Legislation evolutions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="coding-the-legislation/50_entities.html">
+            
+                
+                    <a href="../coding-the-legislation/50_entities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        Entities
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="coding-the-legislation/reforms.html">
+            
+                
+                    <a href="../coding-the-legislation/reforms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Reforms
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="coding-the-legislation/inferences.html">
+            
+                
+                    <a href="../coding-the-legislation/inferences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        Inferences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="coding-the-legislation/writing_yaml_tests.html">
+            
+                
+                    <a href="../coding-the-legislation/writing_yaml_tests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        Writing YAML tests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="coding-the-legislation/legislation_parameters.html">
+            
+                
+                    <a href="../coding-the-legislation/legislation_parameters.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        Parameters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="coding-the-legislation/bootstrapping_a_new_country_package.html">
+            
+                
+                    <a href="../coding-the-legislation/bootstrapping_a_new_country_package.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.12.</b>
+                        
+                        Bootstrapping a new country package
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="openfisca-web-api/index.html">
+            
+                
+                    <a href="../openfisca-web-api/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        OpenFisca Web API
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="openfisca-web-api/preview-api.html">
+            
+                
+                    <a href="../openfisca-web-api/preview-api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Preview API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="openfisca-web-api/endpoints.html">
+            
+                
+                    <a href="../openfisca-web-api/endpoints.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Official API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="openfisca-web-api/input-output-data.html">
+            
+                
+                    <a href="../openfisca-web-api/input-output-data.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Input and output data
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="openfisca-web-api/reforms.html">
+            
+                
+                    <a href="../openfisca-web-api/reforms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Reforms
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="troubleshooting.html">
+            
+                
+                    <a href="../troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Troubleshooting
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="recipes.html">
+            
+                
+                    <a href="../recipes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Recipes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="offline-environment.html">
+            
+                
+                    <a href="../offline-environment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Install OpenFisca in an offline environment
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="publishing.html">
+            
+                
+                    <a href="../publishing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Publishing results
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="community.html">
+            
+                
+                    <a href="../community.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Community
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="contribute/index.html">
+            
+                
+                    <a href="../contribute/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Contribute
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="contribute/guidelines.html">
+            
+                
+                    <a href="../contribute/guidelines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        Contributor guidelines
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="contribute/language.html">
+            
+                
+                    <a href="../contribute/language.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.1.</b>
+                        
+                        Language
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="contribute/commit-messages.html">
+            
+                
+                    <a href="../contribute/commit-messages.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.2.</b>
+                        
+                        Commit messages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="contribute/variables-naming.html">
+            
+                
+                    <a href="../contribute/variables-naming.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.3.</b>
+                        
+                        Variables naming
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="contribute/semver.html">
+            
+                
+                    <a href="../contribute/semver.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.4.</b>
+                        
+                        Semantic versionning
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="contribute/documentation.html">
+            
+                
+                    <a href="../contribute/documentation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        Enhance the documentation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="contribute/extensions.html">
+            
+                
+                    <a href="../contribute/extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        Extensions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="contribute/developer-guide.html">
+            
+                
+                    <a href="../contribute/developer-guide.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        Developer guide
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="contribute/tests.html">
+            
+                
+                    <a href="../contribute/tests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        Tests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="contribute/release-process.html">
+            
+                
+                    <a href="../contribute/release-process.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        Release process
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >OpenFisca</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="input-and-output-data">Input and output data</h1>
+<h2 id="values-by-period">Values by period</h2>
+<p>In OpenFisca, the value of a variable is always defined for a specific period.</p>
+<p>This is encoded in JSON using the following format:</p>
+<pre><code class="lang-JSON">{<span class="hljs-string">&quot;salary&quot;</span>: {<span class="hljs-string">&quot;2015-01&quot;</span>: <span class="hljs-number">2000</span>}}
+</code></pre>
+<p>This format allows you to encode an evolution of the variable over time:</p>
+<pre><code class="lang-JSON">{
+  <span class="hljs-string">&quot;salary&quot;</span>: {
+    <span class="hljs-string">&quot;2015-01&quot;</span>: <span class="hljs-number">2000</span>,
+    <span class="hljs-string">&quot;2015-02&quot;</span>: <span class="hljs-number">2000</span>,
+    <span class="hljs-string">&quot;2015-03&quot;</span>: <span class="hljs-number">2100</span>,
+    <span class="hljs-string">&quot;2015-04&quot;</span>: <span class="hljs-number">2100</span>,
+  }
+}
+</code></pre>
+<p>When you define the inputs of a simulation, you should in general define the period for which you are setting values (except for variables which cannot change over time, such as a birth date).</p>
+<p>If no period is given, for example <code>{enfant_a_charge: false}</code>, your input will <strong>only</strong> be set for the global period of the <a href="#scenarios">scenario</a>.</p>
+<p>Example: <code>{salaire_de_base: 5000}</code> is equivalent to <code>{salaire_de_base: {&lt;scenario_period&gt;: 5000}}</code>, <code>&lt;scenario_period&gt;</code> being defined in the <a href="#scenarios">scenario</a>.</p>
+<h2 id="scenarios">Scenarios</h2>
+<p>A JSON scenario is an object structured this way:</p>
+<ul>
+<li><code>axes</code> (a list of objects, default: null): the axes of the scenario, see <a href="#axes">axes</a></li>
+<li><code>input_variables</code> (an object, mutually exclusive with <code>test_case</code>): the input variables, encoded with the <a href="#values-by-period">value by period</a> structure. For instance:<ul>
+<li><code>{&quot;salary&quot;: {&quot;2015-04&quot;: 2000}, age: {&quot;2015-04&quot;: 30}}</code></li>
+</ul>
+</li>
+<li><code>period</code> (see <a href="../periodsinstants.html">periods and instants</a>): the period on which the variables of the decomposition will be computed</li>
+<li><code>test_case</code> (an object, mutually exclusive with <code>input_variables</code>): the test case of the scenario, see <a href="#test-cases">test cases</a></li>
+</ul>
+<blockquote>
+<p>Either <code>test_case</code> or <code>input_variables</code> must be provided, not both.</p>
+<p><code>axes</code> can&apos;t be used with <code>input_variables</code>, only <code>test_case</code>.</p>
+</blockquote>
+<h2 id="test-cases">Test cases</h2>
+<p>A test case describes persons, entities and their associations.</p>
+<p>Let&apos;s assume that your tax and benefit system defines a <a href="../person,_entities,_role.html#person">person entity</a> named <code>persons</code>, and a <a href="../person,_entities,_role.html#group-entities">group entity]</a> named <code>households</code>.</p>
+<p>Let&apos;s also assume that within a <code>household</code>, you have <code>parents</code> and <code>children</code>.</p>
+<p>A JSON test case is an object structured this way:</p>
+<ul>
+<li><code>persons</code> (list of objects): defines persons with their input variables, structured this way:<ul>
+<li><code>id</code> (string): the ID of the person</li>
+<li><code>&lt;variable name (string)&gt;</code> (the <a href="#values-by-period">value by period</a>): an input variable</li>
+</ul>
+</li>
+<li><code>households</code> (list of objects): the definition of the entity, structured this way:<ul>
+<li><code>id</code> (string): the ID of the entity</li>
+<li><code>parents</code> (list of strings): a list of persons IDs referencing the ones defined under the persons key</li>
+<li><code>children</code> (list of strings): a list of persons IDs referencing the ones defined under the persons key</li>
+<li><code>&lt;variable name (string)&gt;</code> (the <a href="#values-by-period">value by period</a>): an input variable</li>
+</ul>
+</li>
+</ul>
+<p>Entities and roles can be fetched dynamically with the <a href="#entities">entities</a> API endpoint.</p>
+<p>Example using OpenFisca-France entities and roles:</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;individus&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;Personne 1&quot;</span>,
+      <span class="hljs-string">&quot;salaire_de_base&quot;</span>: <span class="hljs-number">50000</span>
+    }
+  ],
+  <span class="hljs-string">&quot;familles&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;Famille 1&quot;</span>,
+      <span class="hljs-string">&quot;parents&quot;</span>: [<span class="hljs-string">&quot;Personne 1&quot;</span>]
+    }
+  ],
+  <span class="hljs-string">&quot;foyers_fiscaux&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;D&#xE9;claration d&apos;imp&#xF4;t 1&quot;</span>,
+      <span class="hljs-string">&quot;declarants&quot;</span>: [<span class="hljs-string">&quot;Personne 1&quot;</span>]
+    }
+  ],
+  <span class="hljs-string">&quot;menages&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;Logement principal 1&quot;</span>,
+      <span class="hljs-string">&quot;personne_de_reference&quot;</span>: <span class="hljs-string">&quot;Personne 1&quot;</span>
+    }
+  ]
+}
+</code></pre>
+<h2 id="axes">Axes</h2>
+<p>A JSON axis is an object structured this way:</p>
+<ul>
+<li><code>count</code> (integer, &gt;= 1, required): the number of steps to go from min to max</li>
+<li><code>index</code> (integer, &gt;= 0, default: 0): the index of the person on which to apply the variation of the variable</li>
+<li><code>max</code> (integer or float, required): the maximum value of the varying variable</li>
+<li><code>min</code> (integer or float, required): the minimum value of the varying variable</li>
+<li><code>name</code> (string, one of available <a href="https://legislation.openfisca.fr/variables" target="_blank">variable names</a>, required): the name of the varying variable</li>
+<li><code>period</code> (see <a href="../periodsinstants.html">periods and instants</a>)</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../openfisca-web-api/endpoints.html" class="navigation navigation-prev " aria-label="Previous page: Official API"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../openfisca-web-api/reforms.html" class="navigation navigation-next " aria-label="Next page: Reforms"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-anchorjs/anchor-style.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"github":{"url":"https://github.com/openfisca/openfisca-doc"},"edit-link":{"base":"https://github.com/openfisca/openfisca-doc","label":"Edit This Page"},"anchorjs":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
