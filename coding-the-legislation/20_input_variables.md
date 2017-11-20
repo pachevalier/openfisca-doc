@@ -52,37 +52,32 @@ We can express this through the enum type.
 1. Create an [enumerated type](https://en.wikipedia.org/wiki/Enumerated_type) `HOUSING_OCCUPANCY_STATUS`:  
 
 ```py
-HOUSING_OCCUPANCY_STATUS = Enum([
-    u'Tenant',
-    u'Owner',
-    u'Free lodger',
-    u'Homeless'])
+class HOUSING_OCCUPANCY_STATUS(Variable):
+    tenant = u'Tenant or lodger who pays a monthly rent',
+    owner = u'Owner',
+    free_lodger = u'Free lodger',
+    homeless = u'Homeless'])
 ```
 
-Enum items are referenced by their index (starting at `0`).
-> For example, `HOUSING_OCCUPANCY_STATUS['Tenant']` will return `0`, `HOUSING_OCCUPANCY_STATUS['Owner']` will return `1`, `HOUSING_OCCUPANCY_STATUS['Free lodger']` will return `2`, ...
+> Each enum item has:
+> - a `name` property that contains its key (e.g. `tenant`)
+> - a `value` property that contains its description (e.g. `"Tenant or lodger who pays a monthly rent"`)
+
+> For example, `HOUSING_OCCUPANCY_STATUS.tenant.name` will return `tenant`.
 
 2. Create an OpenFisca variable `housing_occupancy_status`:  
 
 ```py
 class housing_occupancy_status(Variable):
-    column = EnumCol(
-        enum = HOUSING_OCCUPANCY_STATUS
-        )
+    value_type = Enum
+    possible_values = HOUSING_OCCUPANCY_STATUS
+    default_value = HOUSING_OCCUPANCY_STATUS.tenant #The default is mandatory
     entity = Household
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"
 ```
 This variable links the `HOUSING_OCCUPANCY_STATUS` to a specific entity and period (`Household` and `MONTH` here).  
 
-A default value can also be added:
-
-```py
-    column = EnumCol(
-        enum = HOUSING_OCCUPANCY_STATUS,
-        default = 1  # 'Owner'
-        )
-```
 
 3. Use the enum in a variable formula:  
 
@@ -90,7 +85,7 @@ In a formula, get `housing_occupancy_status` for a given `month` by calling `hou
 
 ```py
 class housing_tax(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     definition_period = YEAR  # This housing tax is defined for a year.
     label = u"Tax paid by each household proportionnally to the size of its accommodation"
@@ -102,8 +97,8 @@ class housing_tax(Variable):
         accommodation_size = household('accomodation_size', january)
 
         housing_occupancy_status = household('housing_occupancy_status', january)
-        tenant = (housing_occupancy_status == HOUSING_OCCUPANCY_STATUS['Tenant'])
-        owner = (housing_occupancy_status == HOUSING_OCCUPANCY_STATUS['Owner'])
+        tenant = (housing_occupancy_status == HOUSING_OCCUPANCY_STATUS.tenant)
+        owner = (housing_occupancy_status == HOUSING_OCCUPANCY_STATUS.owner)
 
         # The tax is applied only if the household owns or rents its main residency
         return (owner + tenant) * accommodation_size * 10
@@ -120,7 +115,7 @@ A YAML test would look as follows:
     accomodation_size:
       2017-01: 100
     housing_occupancy_status:
-      2017-01: Free lodger
+      2017-01: free_lodger
   output_variables:
     housing_tax: 0
 ```
